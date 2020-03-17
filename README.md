@@ -1,6 +1,9 @@
 # SIViewPager
 The ViewPager with Indicator
 
+## recent version 1.0.1
+```implementation 'com.myhome.siviewpager:siviewpager:1.0.1'```
+
 ## You need to override instantiateItem in your custom adapter that extends SIPagerAdapter
 - instantiateItem
 > - You need to inflate your pageritem and call addView(pageritem) method
