@@ -5,6 +5,7 @@ The ViewPager with Indicator
 ```
 implementation 'com.myhome.siviewpager:siviewpager:1.0.1'
 ```
+> - [example](https://github.com/godsangin/SIViewPagerSample)
 
 ## You need to override instantiateItem in your custom adapter that extends SIPagerAdapter
 - instantiateItem
