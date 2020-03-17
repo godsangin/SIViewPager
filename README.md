@@ -17,7 +17,7 @@ The ViewPager with Indicator
 > ### SIViewPager
 > - If you want to use SIViewPager you can use init method to build
 
-## version 1.0.0 issue
+## version 1.0.1 issue
 > ### SIPagerAdapter
 > - getItemPosition, destroyItem are overrided
 
