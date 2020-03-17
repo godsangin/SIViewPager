@@ -12,8 +12,6 @@ import android.widget.LinearLayout
 class AnimationIndicator(context:Context):LinearLayout(context){
     var margin = 10
     var duration = 250
-    var defaultImageId = 0
-    var selectImageId = 0
     lateinit var pagerAdapter:SIPagerAdapter
     lateinit var imageList:ArrayList<ImageView>
     val siPagerListener = object : SIPagerListener {
@@ -37,9 +35,7 @@ class AnimationIndicator(context:Context):LinearLayout(context){
         selectImage(0)
     }
 
-    fun init(adapter:SIPagerAdapter, defaultImageId:Int, selectImageId:Int){
-        this.defaultImageId = defaultImageId
-        this.selectImageId = selectImageId
+    fun init(adapter:SIPagerAdapter){
         this.pagerAdapter = adapter
         adapter.siPagerListener = siPagerListener
         imageList = ArrayList()
@@ -62,7 +58,7 @@ class AnimationIndicator(context:Context):LinearLayout(context){
         params.gravity = Gravity.CENTER
 
         myImageView.layoutParams = params
-        myImageView.setImageResource(defaultImageId)
+        myImageView.setImageResource(R.drawable.ic_brightness_gray_12dp)
         myImageView.setTag(myImageView.id, false)
         addView(myImageView)
     }
@@ -74,18 +70,22 @@ class AnimationIndicator(context:Context):LinearLayout(context){
     }
 
     fun notifyDatasetChangedByPosition(position:Int){
-        if(position == 0) return
-        selectImage(position-1)
+        if(position == 0) {
+            selectImage(0)
+        }
+        else {
+            selectImage(position-1)
+        }
     }
 
     fun selectImage(position:Int){
         for(i in 0..imageList.size - 1){
             if(i == position){
-                imageList[i].setImageResource(selectImageId)
+                imageList[i].setImageResource(R.drawable.ic_brightness_primary_12dp)
                 selectScalAnim(imageList[i], 1f, 1.2f)
             }else{
                 if(imageList[i].getTag(imageList[i].id) == true){
-                    imageList[i].setImageResource(defaultImageId)
+                    imageList[i].setImageResource(R.drawable.ic_brightness_gray_12dp)
                     defaultScaleAnim(imageList[i], 1.2f, 1f)
                 }
             }
