@@ -17,5 +17,13 @@ The ViewPager with Indicator
 > ### SIViewPager
 > - If you want to use SIViewPager you can use init method to build
 
+## version 1.0.0 issue
+> ### SIPagerAdapter
+> - getItemPosition, destroyItem are overrided
 
+> ### AnimationIndicator
+> - defaultImageResource, selectedIamgeResource are removed
+> - losing focus error handling
 
+> ### SIViewPager
+> - If you want to use SIViewPager you can use build method to build
