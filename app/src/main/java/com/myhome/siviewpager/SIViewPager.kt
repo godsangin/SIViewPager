@@ -13,16 +13,10 @@ class SIViewPager(context: Context, attr:AttributeSet):LinearLayout(context, att
     lateinit var viewPager:ViewPager
     lateinit var pagerAdapter:PagerAdapter
     lateinit var animationIndicator: AnimationIndicator
-    val attr = attr
-    var defaultImageId:Int = 0
-    var selectImageId:Int = 0
     var margin = 10
 
-
-    fun init(pagerAdapter: SIPagerAdapter, defaultImageId:Int, selectImageId:Int){
+    fun build(pagerAdapter: SIPagerAdapter){
         this.pagerAdapter = pagerAdapter
-        this.defaultImageId = defaultImageId
-        this.selectImageId = selectImageId
         viewPager = ViewPager(context)
         viewPager.adapter = pagerAdapter
         animationIndicator = AnimationIndicator(context)
@@ -33,7 +27,7 @@ class SIViewPager(context: Context, attr:AttributeSet):LinearLayout(context, att
         params.leftMargin = margin
         params.rightMargin = margin
         params.gravity = Gravity.CENTER
-        animationIndicator.init(pagerAdapter, defaultImageId, selectImageId)
+        animationIndicator.init(pagerAdapter)
         viewPager.layoutParams = params
         val params2 = LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT)
         params2.gravity = Gravity.CENTER
@@ -41,6 +35,14 @@ class SIViewPager(context: Context, attr:AttributeSet):LinearLayout(context, att
         addView(viewPager)
         addView(animationIndicator)
         setViewPagerController()
+    }
+
+    fun setAdapter(siPagerAdapter: SIPagerAdapter){
+        viewPager.adapter = siPagerAdapter
+    }
+
+    fun addOnPageChangeListener(pageChangeListener: ViewPager.OnPageChangeListener){
+        viewPager.addOnPageChangeListener(pageChangeListener)
     }
 
     fun setViewPagerController(){
