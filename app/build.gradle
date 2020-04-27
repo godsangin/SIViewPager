@@ -11,7 +11,7 @@ publish {
     userOrg = 'godsangin'
     groupId = 'com.myhome.siviewpager'
     artifactId = 'siviewpager'
-    publishVersion = '1.0.1'
+    publishVersion = '1.0.2'
     desc = 'https://github.com/godsangin/SIViewPager'
     website = 'https://github.com/godsangin/SIViewPager'
     issueTracker = "https://github.com/godsangin/SIViewPager/issues"
@@ -25,7 +25,7 @@ android {
         minSdkVersion 15
         targetSdkVersion 29
         versionCode 1
-        versionName "1.0.1"
+        versionName "1.0.2"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
