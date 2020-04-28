@@ -11,7 +11,7 @@ import androidx.viewpager.widget.ViewPager
 
 class SIViewPager(context: Context, attr:AttributeSet):LinearLayout(context, attr){
     lateinit var viewPager:ViewPager
-    lateinit var pagerAdapter:PagerAdapter
+    var pagerAdapter:PagerAdapter? = null
     lateinit var animationIndicator: AnimationIndicator
     var margin = 10
 
@@ -64,5 +64,10 @@ class SIViewPager(context: Context, attr:AttributeSet):LinearLayout(context, att
                 animationIndicator.selectImage(position)
             }
         })
+    }
+
+    fun clear(){
+        removeAllViews()
+        pagerAdapter = null
     }
 }
