@@ -11,6 +11,7 @@ implementation 'com.myhome.siviewpager:siviewpager:1.0.1'
 - instantiateItem
 > - You need to inflate your pageritem and call addView(pageritem) method
 > - You need to call setTag(position) in your instantiateItem method(ensuring onPageSelected method's excution in Viewpager.OnPageChangeListener
+> - (+) You need to define orientation in your SIViewPager Tag(in xml)
 
 ## version 1.0.0 issue
 > ### SIPagerAdapter
